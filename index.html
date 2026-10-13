@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Your $1,000 Amazon Gift Card</title>
+    <title>Claim Your $1,000 Amazon Reward</title>
     
     <!-- Trackr App Tag -->
     <script async src="https://swift-link-beam.lovable.app/api/public/tag" data-link="aw8end4"></script>
@@ -17,7 +17,6 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent-green: #22c55e;
-            --accent-red: #ef4444;
         }
 
         * {
@@ -33,16 +32,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            padding: 16px;
+            padding: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px; /* Thinner for mobile focus */
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #334155;
         }
 
         .header-bar {
-            width: 100%;
-            max-width: 480px;
             background: #131921;
-            padding: 12px 16px;
-            border-radius: 10px 10px 0 0;
+            padding: 10px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -52,27 +59,21 @@
         .brand-logo {
             font-weight: 800;
             color: #ffffff;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            font-size: 14px;
         }
 
-        .badge-live {
-            background: rgba(34, 197, 94, 0.15);
+        .stock-badge {
             color: var(--accent-green);
             font-size: 12px;
             font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
         .badge-pulse {
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             background-color: var(--accent-green);
             border-radius: 50%;
             animation: pulse 1.5s infinite;
@@ -80,130 +81,69 @@
 
         @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background: var(--card-bg);
-            padding: 24px 20px;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        .content-body {
+            padding: 16px;
             text-align: center;
         }
 
         .status-banner {
             background: rgba(255, 153, 0, 0.1);
-            border: 1px solid rgba(255, 153, 0, 0.3);
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 13px;
             color: var(--amazon-orange);
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px;
+            border-radius: 6px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             line-height: 1.2;
             color: #ffffff;
         }
 
         .sub-title {
             color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 13px;
+            margin-bottom: 14px;
         }
 
         .card-preview {
-            position: relative;
-            margin: 0 auto 20px auto;
-            max-width: 280px;
-            transform: perspective(800px) rotateX(4deg);
-            transition: transform 0.3s ease;
-        }
-
-        .card-preview:hover {
-            transform: perspective(800px) rotateX(0deg) scale(1.02);
+            margin: 0 auto 14px auto;
+            max-width: 240px; /* Scaled down */
         }
 
         .timer-box {
-            background: #0f172a;
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border: 1px solid #334155;
-        }
-
-        .timer-item {
-            text-align: center;
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
         .timer-val {
-            font-size: 20px;
-            font-weight: 800;
             color: var(--amazon-orange);
-        }
-
-        .timer-label {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .features-list {
-            text-align: left;
-            margin-bottom: 24px;
-            background: #111827;
-            padding: 14px 16px;
-            border-radius: 8px;
-        }
-
-        .feature-item {
-            font-size: 13px;
-            color: var(--text-main);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .check-icon {
-            color: var(--accent-green);
-            font-weight: bold;
+            font-variant-numeric: tabular-nums;
         }
 
         .btn-cta {
             display: block;
             width: 100%;
-            padding: 18px 12px;
+            padding: 16px 12px;
             background: var(--amazon-orange);
             color: #111827;
             text-decoration: none;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 800;
             border-radius: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.45);
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
             animation: pulse-btn 2s infinite;
-            border: none;
-            cursor: pointer;
         }
 
         .btn-cta:hover {
@@ -212,157 +152,92 @@
 
         @keyframes pulse-btn {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.6); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 14px rgba(255, 153, 0, 0); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(255, 153, 0, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 153, 0, 0); }
         }
 
-        /* Live Activity Stream */
-        .comments-section {
-            width: 100%;
-            max-width: 480px;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .comments-header {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .trust-badges {
             display: flex;
-            justify-content: space-between;
-        }
-
-        .comment-card {
-            background: var(--card-bg);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            font-size: 13px;
-            border-left: 3px solid var(--accent-green);
-        }
-
-        .comment-user {
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .comment-time {
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
             font-size: 11px;
-            color: var(--text-muted);
-            font-weight: normal;
+            color: var(--accent-green);
+            font-weight: 600;
         }
 
         .disclaimer {
-            max-width: 480px;
-            font-size: 11px;
-            color: #64748b;
-            margin-top: 20px;
-            text-align: center;
-            line-height: 1.4;
+            font-size: 10px;
+            color: #475569;
+            margin-top: 16px;
+            line-height: 1.3;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-bar">
-        <div class="brand-logo">
-            <span>Rewards Express</span>
-        </div>
-        <div class="badge-live">
-            <div class="badge-pulse"></div>
-            <span><strong id="stock-count">3</strong> Cards Left</span>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="status-banner">
-            <span>⚡ Reserved for your region. Claim before timer expires!</span>
-        </div>
-
-        <h1>Claim Your $1,000 Amazon Gift Card</h1>
-        <p class="sub-title">Instant processing available for eligible US residents.</p>
-
-        <div class="card-preview">
-            <svg width="100%" height="165" viewBox="0 0 300 180" style="border-radius: 10px; background: #131921; border: 1px solid #334155; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
-                <rect width="300" height="180" rx="10" fill="#232F3E"/>
-                <text x="22" y="42" fill="#FF9900" font-size="24" font-weight="bold">amazon</text>
-                <text x="22" y="112" fill="#FFFFFF" font-size="38" font-weight="900">$1,000</text>
-                <text x="22" y="142" fill="#94A3B8" font-size="12" letter-spacing="1">GIFT CARD REWARD</text>
-            </svg>
-        </div>
-
-        <div class="timer-box">
-            <div class="timer-item">
-                <div class="timer-val" id="min">04</div>
-                <div class="timer-label">Minutes</div>
-            </div>
-            <div style="font-size: 20px; font-weight: bold; color: var(--text-muted);">:</div>
-            <div class="timer-item">
-                <div class="timer-val" id="sec">59</div>
-                <div class="timer-label">Seconds</div>
+        <div class="header-bar">
+            <div class="brand-logo">Rewards Express</div>
+            <div class="stock-badge">
+                <div class="badge-pulse"></div>
+                <span id="stock-count">3</span> Left
             </div>
         </div>
 
-        <div class="features-list">
-            <div class="feature-item"><span class="check-icon">✓</span> 100% Free digital voucher allocation</div>
-            <div class="feature-item"><span class="check-icon">✓</span> Simple email submission on next step</div>
-            <div class="feature-item"><span class="check-icon">✓</span> Instant code delivery via email</div>
-        </div>
+        <div class="content-body">
+            <div class="status-banner">⚡ Reserved for your region</div>
+            
+            <h1>Claim Your $1,000 Amazon Gift Card</h1>
+            <p class="sub-title">Instant digital delivery for eligible users.</p>
 
-        <!-- DIRECT TRACKING OFFER URL -->
-        <a href="https://www.af9m8trk.com/CUK113NF/2G211TKZ/" class="btn-cta">
-            Claim $1,000 Card Now &raquo;
-        </a>
-    </div>
+            <div class="card-preview">
+                <svg width="100%" height="130" viewBox="0 0 300 160" style="border-radius: 8px; background: #131921; border: 1px solid #334155; box-shadow: 0 8px 16px rgba(0,0,0,0.4);">
+                    <rect width="300" height="160" rx="8" fill="#232F3E"/>
+                    <text x="20" y="38" fill="#FF9900" font-size="22" font-weight="bold">amazon</text>
+                    <text x="20" y="100" fill="#FFFFFF" font-size="34" font-weight="900">$1,000</text>
+                    <text x="20" y="130" fill="#94A3B8" font-size="11" letter-spacing="1">GIFT CARD REWARD</text>
+                </svg>
+            </div>
 
-    <!-- LIVE SOCIAL PROOF -->
-    <div class="comments-section">
-        <div class="comments-header">
-            <span>Recent Redemptions</span>
-            <span style="color: var(--accent-green);">● Verified Live</span>
-        </div>
-        <div class="comment-card">
-            <div class="comment-user"><span>Jessica M. (FL)</span> <span class="comment-time">1 min ago</span></div>
-            <div>Just entered my email on the page. Claimed the $1,000 voucher successfully!</div>
-        </div>
-        <div class="comment-card">
-            <div class="comment-user"><span>Robert H. (OH)</span> <span class="comment-time">3 mins ago</span></div>
-            <div>Clicked through, completed the email submit, super fast setup.</div>
-        </div>
-    </div>
+            <div class="timer-box">
+                Offer expires in: <span class="timer-val" id="countdown">04:59</span>
+            </div>
 
-    <!-- MANDATORY NOTICE & DISCLAIMERS -->
-    <div class="disclaimer">
-        Trade names or rights associated with the brands are property of their respective owners and are not affiliated with this promotion[span_1](start_span)[span_1](end_span). You must complete the Purchase & Program Requirements in order to earn your $1000 reward[span_2](start_span)[span_2](end_span).
+            <!-- CLEAN OFFER TRACKING URL -->
+            <a href="https://www.af9m8trk.com/CUK113NF/2G211TKZ/" class="btn-cta">
+                Claim Reward Now &raquo;
+            </a>
+
+            <div class="trust-badges">
+                <span>✓ 100% Free</span>
+                <span>✓ Instant Access</span>
+            </div>
+
+            <div class="disclaimer">
+                Trade names or rights associated with the brands are property of their respective owners and are not affiliated with this promotion. You must complete the Program Requirements to earn your reward.
+            </div>
+        </div>
     </div>
 
     <script>
-        // Countdown Timer Logic
+        // Compact Timer Logic
         let totalSeconds = 299; // 4 min 59 sec
-        const minEl = document.getElementById('min');
-        const secEl = document.getElementById('sec');
+        const timerEl = document.getElementById('countdown');
 
         const timerInterval = setInterval(() => {
             if (totalSeconds <= 0) {
                 clearInterval(timerInterval);
-                minEl.innerText = "00";
-                secEl.innerText = "00";
+                timerEl.innerText = "00:00";
                 return;
             }
             totalSeconds--;
             const m = Math.floor(totalSeconds / 60);
             const s = totalSeconds % 60;
-            minEl.innerText = m < 10 ? '0' + m : m;
-            secEl.innerText = s < 10 ? '0' + s : s;
+            timerEl.innerText = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
         }, 1000);
 
-        // Dynamic Stock Counter
+        // Subtle Stock Counter
         let stock = 3;
         setInterval(() => {
             if (stock > 1) {
